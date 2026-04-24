@@ -3,6 +3,6 @@
 */.ipynb_checkpoints/
 .virtual_documents/
 
-# Large datasets download manually from Kaggle 
-data/universal_top_spotify_songs.csv
+# Large datasets downloaded manually from Kaggle 
+data/raw/universal_top_spotify_songs.csv
 ```
