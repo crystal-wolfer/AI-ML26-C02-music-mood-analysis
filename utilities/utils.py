@@ -8,8 +8,7 @@ REQUIRED_FILES = [
     'low_popularity_spotify_data.csv',
     'universal_top_spotify_songs.csv',
     'mxmh_survey_results.csv',
-    'World-happiness-report-2024.csv',
-    'World-happiness-report-updated_2024.csv'
+    'World-happiness-report-2024.csv'
 ]
 
 def check_datasets_availability(data_path=None):
