@@ -42,6 +42,15 @@ data/
   World-happiness-report-updated_2024.csv
 ```
 
+**Dataset versions used in this project** - all downloaded on 19 April 2026. If a dataset has been updated since that date, results may differ from those reported in the notebooks.
+
+| Dataset | Downloaded on |
+|---|---|
+| DS1 - Spotify Music Dataset | 19 Apr 2026 |
+| DS2 - Top Spotify Songs in 73 Countries | 19 Apr 2026 |
+| DS3 - Music and Mental Health Survey (MxMH) | 19 Apr 2026 |
+| DS4 - World Happiness Report 2024 | 19 Apr 2026 |
+
 ### Step 3 - Run the notebooks in order
 
 Open the notebooks in the `notebooks/` folder and run each one **from top to bottom**, in sequence:
