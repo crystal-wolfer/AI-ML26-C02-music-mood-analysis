@@ -1,5 +1,58 @@
 # Exploratory Analysis of Music Listening Behaviour as a Signal of Population and Individual Mental State
 
+## Setup and Running
+
+> **Important:** Please follow these steps before opening any notebook. Notebooks NB01 and NB02 include a file-existence check at the top and will raise an error if the datasets are not in place.
+
+### Prerequisites
+
+- [Anaconda](https://www.anaconda.com/download) (Python 3.10+)
+- Jupyter Notebook or JupyterLab (included with Anaconda)
+- A free [Kaggle account](https://www.kaggle.com) to download the datasets
+
+### Step 1 - Create the required folders
+
+In the repository root, create two empty folders:
+
+```
+data/
+figures/
+```
+
+### Step 2 - Download the datasets from Kaggle
+
+Download each dataset manually from the links below and place all CSV files directly inside the `data/` folder (no subfolders).
+
+| Dataset | Kaggle URL |
+|---|---|
+| DS1 - Spotify Music Dataset | https://www.kaggle.com/datasets/solomonameh/spotify-music-dataset |
+| DS2 - Top Spotify Songs in 73 Countries | https://www.kaggle.com/datasets/asaniczka/top-spotify-songs-in-73-countries-daily-updated |
+| DS3 - Music and Mental Health Survey (MxMH) | https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results |
+| DS4 - World Happiness Report 2024 | https://www.kaggle.com/datasets/jainaru/world-happiness-report-2024-yearly-updated |
+
+After downloading, the `data/` folder should contain:
+
+```
+data/
+  high_popularity_spotify_data.csv
+  low_popularity_spotify_data.csv
+  universal_top_spotify_songs.csv
+  mxmh_survey_results.csv
+  World-happiness-report-2024.csv
+  World-happiness-report-updated_2024.csv
+```
+
+### Step 3 - Run the notebooks in order
+
+Open the notebooks in the `notebooks/` folder and run each one **from top to bottom**, in sequence:
+
+1. `01-data profiling.ipynb` - loads and reviews all four datasets
+2. `02-data cleaning.ipynb` - cleans, fixes, and joins the datasets
+3. `03-eda and mood profiles.ipynb` - exploratory analysis and mood visualisations
+4. `04-hypothesis testing.ipynb` - formal statistical experiments
+
+Each notebook depends on outputs from the previous one, so the order matters.
+
 ## Project Definition and Significance
 In our increasingly connected world, music streaming platforms like Spotify have become a daily companion for millions, offering not just entertainment but a potential window into emotional life. As someone who listens to music extensively, I have noticed how my choices shift based on mood switching from upbeat pop and house when I am energized to more reflective tracks during challenging moments. This observation raises a question: Is this pattern purely personal, or do people generally vary their music according to emotional state? And can large-scale listening data reveal broader patterns linking music with wellbeing at both societal and individual levels?
 
@@ -33,7 +86,7 @@ The project relies on four complementary datasets, each selected for its ability
 This dataset comprises two CSV files: `high_popularity_spotify_data.csv` and `low_popularity_spotify_data.csv` containing track metadata, popularity measures, and audio features such as valence, energy, and danceability. DS1 provides the musical attributes needed to build mood profiles and compare tracks across popularity levels.
 
 ### DS2: [Top Spotify Songs in 73 Countries - Daily](https://www.kaggle.com/datasets/asaniczka/top-spotify-songs-in-73-countries-daily-updated)
-This dataset contains daily charts for top Spotify songs in 73 countries, including Spotify ID, rank, and date. It can be joined to DS1 via Spotify ID to aggregate mood profiles by country and time period. DS2 enables analysis of geographical and seasonal patterns in collective listening behaviour. Since this dataset is too large (486.297MB) and exceeds GitHub's file size limit in order to keep the original structure this dataset must be [downloaded manually.](https://www.kaggle.com/datasets/asaniczka/top-spotify-songs-in-73-countries-daily-updated)
+This dataset contains daily charts for top Spotify songs in 73 countries, including Spotify ID, rank, and date. It can be joined to DS1 via Spotify ID to aggregate mood profiles by country and time period. DS2 enables analysis of geographical and seasonal patterns in collective listening behaviour.
 
 ### DS3: [Music & Mental Health Survey - MxMH](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results)
 This survey dataset includes responses from 736 individuals, with self-reported scores for anxiety, depression, insomnia, and OCD on a 0–10 scale, along with genre preferences. No location data is available. DS3 is used to explore individual-level associations between mental health and music taste, providing a different perspective from the country-level datasets.
